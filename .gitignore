@@ -1,0 +1,9 @@
+.env
+venv/
+data/
+logs/
+__pycache__/
+*.pyc
+.DS_Store
+resume.txt
+*.tar.gz

@@ -1,0 +1,14 @@
+[Unit]
+Description=Job Tracker Alert — Daily Digest Email
+After=network.target
+
+[Service]
+Type=oneshot
+User=jobtracker
+Group=jobtracker
+WorkingDirectory=/opt/job-tracker-alert
+Environment="PATH=/opt/job-tracker-alert/venv/bin:/usr/bin"
+EnvironmentFile=/opt/job-tracker-alert/.env
+ExecStart=/opt/job-tracker-alert/venv/bin/python /opt/job-tracker-alert/src/digest.py
+StandardOutput=append:/opt/job-tracker-alert/logs/digest.log
+StandardError=append:/opt/job-tracker-alert/logs/digest.log

@@ -1,0 +1,10 @@
+[Unit]
+Description=Send daily digest at 9 AM Pacific (5 PM UTC)
+
+[Timer]
+OnCalendar=*-*-* 17:00:00
+AccuracySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Job Tracker Alert — Fetch and Match Jobs
+After=network.target
+
+[Service]
+Type=oneshot
+User=jobtracker
+Group=jobtracker
+WorkingDirectory=/opt/job-tracker-alert
+Environment="PATH=/opt/job-tracker-alert/venv/bin:/usr/bin"
+EnvironmentFile=/opt/job-tracker-alert/.env
+ExecStart=/opt/job-tracker-alert/venv/bin/python /opt/job-tracker-alert/src/main.py
+StandardOutput=append:/opt/job-tracker-alert/logs/fetcher.log
+StandardError=append:/opt/job-tracker-alert/logs/fetcher.log

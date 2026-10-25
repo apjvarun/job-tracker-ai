@@ -1,0 +1,23 @@
+[Unit]
+Description=Job Tracker Alert — Web Dashboard
+After=network.target
+
+[Service]
+Type=simple
+User=jobtracker
+Group=jobtracker
+WorkingDirectory=/opt/job-tracker-alert
+Environment="PATH=/opt/job-tracker-alert/venv/bin:/usr/bin"
+EnvironmentFile=/opt/job-tracker-alert/.env
+ExecStart=/opt/job-tracker-alert/venv/bin/gunicorn \
+    --bind 127.0.0.1:8080 \
+    --workers 2 \
+    --timeout 120 \
+    --access-logfile /opt/job-tracker-alert/logs/access.log \
+    --error-logfile /opt/job-tracker-alert/logs/error.log \
+    web.app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

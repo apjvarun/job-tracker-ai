@@ -1,0 +1,493 @@
+# ============================================================
+# Instant Job Alert System — Configuration
+# ============================================================
+
+# Target companies and their career page sources
+companies:
+
+  # --- Working sources ---
+
+  - name: "Netflix"
+    enabled: true
+    source_type: "netflix_eightfold"
+    source_config:
+      base_url: "https://explore.jobs.netflix.net/careers"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "los gatos"
+      - "los angeles"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+      - "usa"
+
+  - name: "Stripe"
+    enabled: true
+    source_type: "stripe_careers"
+    source_config:
+      base_url: "https://stripe.com/jobs/search"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+      - "principal product manager"
+    target_locations:
+      - "san francisco"
+      - "south san francisco"
+      - "seattle"
+      - "new york"
+      - "remote"
+      - "united states"
+
+  # --- Greenhouse API companies (public JSON API, no auth needed) ---
+
+  - name: "Anthropic"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "anthropic"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  - name: "Databricks"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "databricks"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+      - "principal product manager"
+    target_locations:
+      - "san francisco"
+      - "mountain view"
+      - "seattle"
+      - "new york"
+      - "remote"
+      - "united states"
+
+  - name: "Figma"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "figma"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  - name: "Airbnb"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "airbnb"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  - name: "Coinbase"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "coinbase"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  # --- NEW: Greenhouse API companies (Batch 2) ---
+
+  - name: "Scale AI"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "scaleai"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  - name: "Cloudflare"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "cloudflare"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+      - "principal product manager"
+    target_locations:
+      - "san francisco"
+      - "austin"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  - name: "Datadog"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "datadog"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "new york"
+      - "san francisco"
+      - "boston"
+      - "remote"
+      - "united states"
+
+  - name: "MongoDB"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "mongodb"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "new york"
+      - "san francisco"
+      - "austin"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  - name: "Robinhood"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "robinhood"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "menlo park"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  - name: "Twilio"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "twilio"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "denver"
+      - "new york"
+      - "remote"
+      - "united states"
+
+  - name: "Vercel"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "vercel"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "remote"
+      - "united states"
+
+  - name: "Okta"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "okta"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "san jose"
+      - "chicago"
+      - "remote"
+      - "united states"
+
+  - name: "Airtable"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "airtable"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "remote"
+      - "united states"
+
+  - name: "Zscaler"
+    enabled: true
+    source_type: "greenhouse"
+    source_config:
+      board_slug: "zscaler"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san jose"
+      - "san francisco"
+      - "remote"
+      - "united states"
+
+  # --- NEW: Lever API companies ---
+
+  - name: "Palantir"
+    enabled: true
+    source_type: "lever"
+    source_config:
+      company_slug: "palantir"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+    target_locations:
+      - "palo alto"
+      - "new york"
+      - "washington"
+      - "denver"
+      - "remote"
+      - "united states"
+
+  - name: "Plaid"
+    enabled: true
+    source_type: "lever"
+    source_config:
+      company_slug: "plaid"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "remote"
+      - "united states"
+
+  # --- NEW: Ashby API companies ---
+
+  - name: "OpenAI"
+    enabled: true
+    source_type: "ashby"
+    source_config:
+      company_slug: "openai"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+      - "product lead"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "seattle"
+      - "remote"
+      - "united states"
+
+  - name: "Notion"
+    enabled: true
+    source_type: "ashby"
+    source_config:
+      company_slug: "notion"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "remote"
+      - "united states"
+
+  - name: "Ramp"
+    enabled: true
+    source_type: "ashby"
+    source_config:
+      company_slug: "ramp"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "new york"
+      - "san francisco"
+      - "miami"
+      - "remote"
+      - "united states"
+
+  # --- NEW: Workday companies ---
+
+  - name: "CrowdStrike"
+    enabled: true
+    source_type: "workday"
+    source_config:
+      company_slug: "crowdstrike"
+      wd_instance: "wd5"
+      site_name: "crowdstrikecareers"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "austin"
+      - "sunnyvale"
+      - "san francisco"
+      - "remote"
+      - "united states"
+
+  - name: "Salesforce (Slack)"
+    enabled: true
+    source_type: "workday"
+    source_config:
+      company_slug: "salesforce"
+      wd_instance: "wd12"
+      site_name: "Slack"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "new york"
+      - "denver"
+      - "remote"
+      - "united states"
+
+  # --- NEW: SmartRecruiters companies ---
+
+  - name: "Palo Alto Networks"
+    enabled: true
+    source_type: "smartrecruiters"
+    source_config:
+      company_id: "PaloAltoNetworks2"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "santa clara"
+      - "san francisco"
+      - "remote"
+      - "united states"
+
+  - name: "Block"
+    enabled: true
+    source_type: "smartrecruiters"
+    source_config:
+      company_id: "Square"
+    search_keywords:
+      - "product manager"
+      - "senior product manager"
+      - "staff product manager"
+    target_locations:
+      - "san francisco"
+      - "oakland"
+      - "new york"
+      - "remote"
+      - "united states"
+
+  # --- Disabled until adapters are verified ---
+
+  - name: "Google"
+    enabled: false
+    source_type: "google_careers"
+    source_config:
+      base_url: "https://www.google.com/about/careers/applications/jobs/results/"
+    search_keywords:
+      - "Product Manager"
+    target_locations:
+      - "mountain view"
+      - "san francisco"
+      - "sunnyvale"
+      - "seattle"
+
+  - name: "Meta"
+    enabled: false
+    source_type: "meta_careers"
+    source_config:
+      base_url: "https://www.metacareers.com/jobs/"
+    search_keywords:
+      - "Product Manager"
+    target_locations:
+      - "menlo park"
+      - "san francisco"
+      - "seattle"
+      - "new york"
+      - "remote"
+
+# Matching settings
+matching:
+  model: "gemini-2.5-flash-lite"
+  max_tokens: 500
+  include_tier3_in_digest: false
+
+# Notification settings
+notifications:
+  telegram:
+    enabled: true
+  email:
+    enabled: true
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    recipient: "${NOTIFICATION_EMAIL}"  # Set via .env or override here
+    digest_hour: 9  # 9 AM PT
+
+# General settings
+settings:
+  database_path: "data/jobs.db"
+  resume_path: "resume.txt"
+  log_level: "INFO"
+  poll_interval_minutes: 15
